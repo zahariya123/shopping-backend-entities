@@ -1,7 +1,5 @@
 /* eslint-disable prettier/prettier */
 import { Column, Entity, OneToMany } from "typeorm";
-import { Content } from "./content.entity";
-import { ContentDto } from "../../../backend-refresher-1.0-dtos/src/dtos/content.dto"
 import { EntityBase } from "./entityBase";
 
 @Entity()
@@ -20,9 +18,9 @@ export class User extends EntityBase {
     phoneNumber: string;
 
     @Column()
-    password: string;
+    address: string;
 
-    @OneToMany(()=>Content,content=>content.user)
-    contents: ContentDto[];
+    @Column()
+    password: string;
 
 }
